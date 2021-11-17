@@ -24,10 +24,15 @@ class UsersController < ApplicationController
 
     def edit
         #pulls up form for editing a user
+        user = User.find(params[:id])
+        render component: "UserEdit", props: {user: user}
     end
 
     def update
         #changes the user
+        user = User.find(params[:id])
+        user.update(full_name: params[:user][:full_name],age: params[:user][:age], gender: params[:user][:gender])
+        redirect_to users_path
     end
 
     def destroy

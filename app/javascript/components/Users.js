@@ -15,7 +15,8 @@ const Users = (props) => {
     return (
         <div>
             <h3>All Users Shown</h3>
-            {/* here is where we would put a link to create new user */}
+            <a href="/">Back to Home</a>
+            <br></br>
             <a href="/users/new">Make a New User</a>
             <p>{renderUsers()}</p>
         </div>
