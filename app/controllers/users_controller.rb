@@ -11,10 +11,13 @@ class UsersController < ApplicationController
 
     def new
         #pulls up form for entering a new user
+        render component: "UserNew"
     end
 
     def create
         #makes the new user based on params
+        User.create(full_name: params[:user][:full_name],age: params[:user][:age], gender: params[:user][:gender])
+        redirect_to users_path
     end
 
     def edit
