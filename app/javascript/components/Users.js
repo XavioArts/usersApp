@@ -2,7 +2,7 @@ import React from "react";
 
 const Users = (props) => {
     const renderUsers = () => {
-        return props.users.map((user)=>{
+        return props.users.map((user) => {
             return (
                 <div>
                     <h1>{user.full_name}</h1>
