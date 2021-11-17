@@ -7,6 +7,8 @@ class UsersController < ApplicationController
 
     def show
         #display 1 user at their :id
+        user = User.find(params[:id])
+        render component: "User", props: {user: user}
     end
 
     def new
@@ -30,5 +32,7 @@ class UsersController < ApplicationController
 
     def destroy
         #deletes
+        user = User.find(params[:id])
+        user.destroy
     end
 end
